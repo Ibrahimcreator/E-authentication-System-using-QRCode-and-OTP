@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Successful</h1>
+    
+    {% if user %}
+        <p>Your registration is complete. Welcome, {{ user[1] }}!</p>
+        <p>View your <a href="{{ url_for('profile') }}">profile</a>.</p>
+    {% else %}
+        <p>Something went wrong. Please try logging in again.</p>
+    {% endif %}
+</body>
+</html>

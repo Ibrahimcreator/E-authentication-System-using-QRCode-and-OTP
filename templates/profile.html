@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        div {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>User Profile</h1>
+        
+        {% if user %}
+            <p>Username: {{ user[1] }}</p>
+            <p>Email: {{ user[4] }}</p>
+            <p>Phone Number: {{ user[3] }}</p>
+            <p>Date of Birth: {{ user[9] }}</p>
+            <p>Roll No: {{ user[5] }}</p>
+            <p>Department: {{ user[6] }}</p>
+            <p>College: {{ user[7] }}</p>
+            <p>OTP: {{ user[8] }}</p>
+        {% else %}
+            <p>Error: Unable to retrieve user information. Please try logging in again.</p>
+        {% endif %}
+        
+        <p><a href="/">Logout</a></p>
+    </div>
+</body>
+</html>
